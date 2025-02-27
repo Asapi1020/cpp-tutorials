@@ -1,11 +1,21 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "ms-vscode.cpptools",
+
+  "C_Cpp.default.includePath": [
+    "${env.USERPROFILE}/.conan2/p/**"
+  ],
+
   "code-runner.runInTerminal": true,
   "code-runner.executorMap": {
     "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt -fexec-charset=CP932 && $dir$fileNameWithoutExt",
     "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt -fexec-charset=CP932 && $dir$fileNameWithoutExt"
   },
+
+  "cmake.configureOnEdit": false,
+  "cmake.configureOnOpen": false,
+  "cmake.autoSelectActiveFolder": false,
+  
   "files.associations": {
     "atomic": "cpp",
     "bit": "cpp",
