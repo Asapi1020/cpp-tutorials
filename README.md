@@ -23,8 +23,20 @@ C++ tutorials for me
   - `conan profile detect`
   - `%USERPROFILE%/.conan/profile/default` が生成されるので編集する（リポジトリにサンプルファイルがある）
 - 使い方
+  - インポート
   1. 必要なパッケージを定義: ルートディレクトリに `conanfile.txt` を作る（未作成の場合）
   2. パッケージをインストール: `conan install . --output-folder=build --build=missing`
+  - パブリッシュ
+  1. リモートリポジトリを用意する（ここではJFROG Artifactoryを用いる）
+  2. リモートリポジトリを設定してログインする
+      ```
+      conan remote add {REPOSITORY} {URL}
+      conan remote login -p {TOKEN} {REPOSITORY} {EMAIL}
+      ```
+  3. conanfile.pyを用意してパッケージを作成: `conan create .`
+  4. パブリッシュする `conan upload {LIBRARY}/{VERSION} --remote={REPOSITORY}`
+
+
 
 ## 開発
 ### フォーマット
