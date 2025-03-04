@@ -36,7 +36,20 @@ C++ tutorials for me
   3. conanfile.pyを用意してパッケージを作成: `conan create .`
   4. パブリッシュする `conan upload {LIBRARY}/{VERSION} --remote={REPOSITORY}`
 
-
+### Pre Commitツール lefthook
+- インストール (Windows)
+  1. scoopをインストール
+      1. `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
+      2. `irm get.scoop.sh | iex`
+      3. `scoop --version`で確認
+  2. lefthookをインストール
+      1. `scoop install lefthook`
+      2. `lefthook version`で確認
+- 設定
+  1. ルートディレクトリに`lefthook.yml`を生成
+  2. lefthook.ymlを編集したら`lefthook install`で反映
+  3. （任意）`lefthook run pre-commit`で手動実行
+  4. commit時に自動で実行される
 
 ## 開発
 ### フォーマット
